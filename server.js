@@ -24,5 +24,8 @@ app.listen(PORT, () => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
+// Static folder for express
+app.use(express.static("public"));
+
 
 
