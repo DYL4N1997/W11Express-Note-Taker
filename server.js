@@ -11,6 +11,18 @@ const PORT = process.env.PORT || 4000;
 
 // listen for sever
 app.listen(PORT, () => {
-  console.log(`Server started on port ${PORT}`);
+  console.log(`
+  
+     ______________________________________
+    |                                      |
+    |    Server started on port ${PORT}    |
+    |______________________________________|
+  `);
 });
+
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: false}));
+
+
 
