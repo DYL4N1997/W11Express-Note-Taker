@@ -36,5 +36,12 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 })
 
+// Configuration of the API Routes
+
+// Retreiving all inputted notes
+app.get("/api/notes", (req, res) => {
+    res.json(noteString);
+});
+
 
 
