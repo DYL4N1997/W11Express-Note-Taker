@@ -5,6 +5,10 @@ body {
   padding: 0;
 }
 
+.delete-note {
+  color: green;
+}
+
 .save-note {
   display: none;
 }
@@ -14,6 +18,13 @@ body {
   margin-right: 15px;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+.icons {
+  color: white;
+}
+.icons:hover {
+  color: #00d9ff;
 }
 
 .note-textarea,
@@ -42,6 +53,7 @@ body {
 }
 
 .list-container .card {
+  background-color: rgb(236, 255, 220);
   height: calc(100vh - 70px);
   border-bottom: none;
   border-bottom-right-radius: 0;
