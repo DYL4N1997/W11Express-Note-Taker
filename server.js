@@ -43,5 +43,11 @@ app.get("/api/notes", (req, res) => {
     res.json(noteString);
 });
 
+app.get("/api/notes", (req, res) => {
+    const newNote = {
+        title: req.body.title,
+        text: req.body.text,
+        id: uuid.v4(),
+};
 
 
