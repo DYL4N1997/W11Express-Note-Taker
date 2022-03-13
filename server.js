@@ -27,5 +27,10 @@ app.use(express.urlencoded({ extended: false}));
 // Static folder for express
 app.use(express.static("public"));
 
+// HTML Requests
+app.get("/notes", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "notes.html"));
+})
+
 
 
