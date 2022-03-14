@@ -44,15 +44,26 @@ app.get("/api/notes", (req, res) => {
     res.json(noteStore);
 });
 
+// User creates a note
 app.post("/api/notes", (req, res) => {
-    let newNote = {
+    let userNote = {
         title: req.body.title,
         text: req.body.text,
         id: uuid.v4(),
 };
 
-noteStore.push(newNote);
-res.json(newNote);
+    noteStore.push(newNote);
+    res.json(userNote);
+
+// write user note to database
+    fs.writeFile("db/db.json", JSON.stringify(userNote), (error) => {
+        if (error) throw error;
+        return true;
+    });
+});
+
+
+
 
 
 
