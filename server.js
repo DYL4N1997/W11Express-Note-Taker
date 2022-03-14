@@ -1,8 +1,9 @@
 const express = require("express");
-const path = require("path");
 const uuid = require("uuid");
+const path = require("path");
 
-let noteString = require("./db/db.json");
+
+let noteStore = require("./db/db.json");
 const fs = require("fs");
 
 // initialising express
@@ -40,14 +41,18 @@ app.get("/", (req, res) => {
 
 // Retreiving all inputted notes
 app.get("/api/notes", (req, res) => {
-    res.json(noteString);
+    res.json(noteStore);
 });
 
-app.get("/api/notes", (req, res) => {
-    const newNote = {
+app.post("/api/notes", (req, res) => {
+    let newNote = {
         title: req.body.title,
         text: req.body.text,
         id: uuid.v4(),
 };
+
+noteStore.push(newNote);
+res.json(newNote);
+
 
 
