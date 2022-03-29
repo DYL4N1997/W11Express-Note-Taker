@@ -22,7 +22,7 @@ app.listen(PORT, () => {
 
 // Tool middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 
 // set a static folder for express
 app.use(express.static("public"));
