@@ -65,10 +65,8 @@ app.post("/api/notes", (req, res) => {
 // Deleting a note
 app.delete("api/notes/:id", (req,res) => {
     let { id } = req.params;
-    let findNote = noteStore.findIndex((note) => note.id !== id);
-    let delNote = noteStore.splice(findNote, 1);
-    res.send(delNote);
-
+    noteStore = noteStore.filter((note) => note.id !==id);
+    res.send(`User id ${id} has been removed from the databse`);
     fs.writeFile("db/db.json", JSON.stringify(noteStore), (err) => {
         if (err) throw err;
         console.log("Database error has occured");
