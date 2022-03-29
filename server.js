@@ -70,7 +70,4 @@ app.delete("api/notes/:id", (req,res) => {
         if (err) throw err;
         console.log("Database error has occured");
       });
-
-      app.listen(PORT, () => 
-      console.log(`App is available at http://localhost:${PORT}`)); 
-})
+});
