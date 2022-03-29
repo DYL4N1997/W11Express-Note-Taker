@@ -53,13 +53,12 @@ app.post("/api/notes", (req, res) => {
 
   noteStore.push(newNote);
 
+  res.json(noteStore);
+
   fs.writeFile("db/db.json", JSON.stringify(noteStore), (err) => {
     if (err) throw err;
     console.log("Database error has occured");
   });
-
-  res.json(noteStore);
-
 });
 
 // Deleting a note
